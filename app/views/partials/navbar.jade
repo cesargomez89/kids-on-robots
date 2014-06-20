@@ -1,5 +1,8 @@
-.header(ng-controller='NavbarCtrl')
-  ul.nav.nav-pills.pull-right
-    li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
-      a(ng-href='{{item.link}}') {{item.title}}
-  h3.text-muted kidsOnRobots
+.navbar.navbar-default.navbar-inverse(ng-controller='NavbarCtrl')
+  .container-fluid
+    .navbar-header
+      a.navbar-brand kidsOnRobots
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+          a(ng-href='{{item.link}}') {{item.title}}

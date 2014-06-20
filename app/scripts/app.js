@@ -15,6 +15,6 @@ angular.module('kidsOnRobotsApp', [
       .otherwise({
         redirectTo: '/'
       });
-      
+
     $locationProvider.html5Mode(true);
   });
