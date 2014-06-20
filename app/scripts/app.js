@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('kidsOnRobotsApp', [
+  'ngCookies',
+  'ngResource',
   'ngSanitize',
   'ngRoute'
 ])
