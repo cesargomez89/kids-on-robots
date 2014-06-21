@@ -76,17 +76,33 @@ body {
  *  [> Remove the bottom border on the jumbotron for visual effect <]
  *}
  */
+.sidebar{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 .sidebar .tool{
   width: 50px;
   height: 50px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
-.sidebar .light-sensor{
+.sidebar #light-sensor{
+  z-index: 1;
   background-color: red;
 }
 
-.sidebar .motor{
+.sidebar #motor{
+  z-index: 2;
   background-color: green;
+}
+
+.sidebar #wheels{
+  z-index: 3;
+  background-color: blue;
+}
+
+.sidebar #nxt{
+  z-index: 4;
+  background-color: orange;
 }

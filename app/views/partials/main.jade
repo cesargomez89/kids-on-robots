@@ -1,8 +1,15 @@
 div(ng-include='\'partials/navbar\'')
 .row
-  .col-md-12
-    .col-md-2.sidebar
-      .sidebar(ng-include='\'partials/sidebar\'')
+  .col-md-12(ng-controller='assemblerCtrl', ng-init='init()')
+    .col-md-2.sidebar.panel.panel-default
+      .panel-heading
+        |Tools Panel
+      .media.tool#light-sensor
+      .media.tool#motor
+      .media.tool#nxt
+      .media.tool#wheels
+      .media.panel-footer
+        p drag and drop the needed tools for your car
     .col-md-10
       .jumbotron
         .car-bottom.text-center
