@@ -92,12 +92,12 @@ body {
   background-color: red;
 }
 
-.sidebar #motor{
+.sidebar #wheel-1{
   z-index: 2;
-  background-color: green;
+  background-color: blue;
 }
 
-.sidebar #wheels{
+.sidebar #wheel-2{
   z-index: 3;
   background-color: blue;
 }
@@ -105,4 +105,47 @@ body {
 .sidebar #nxt{
   z-index: 4;
   background-color: orange;
+}
+
+.shapes{
+  height: 519px;
+  width: 239px;
+  position: relative;
+  margin: 0 auto;
+  bottom: 519px;
+}
+
+.wrapper{
+  height: 100%;
+}
+
+#nxt-shape{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 71px;
+  top: 80px;
+}
+
+#sensor-shape{
+  width: 100px;
+  height: 75px;
+  position: absolute;
+  left: 71px;
+  top: 0px;
+}
+
+#wheel-1-shape{
+  width: 71px;
+  height: 100px;
+  top: 57px;
+  position: absolute;
+}
+
+#wheel-2-shape{
+  width: 70px;
+  height: 100px;
+  top: 57px;
+  position: absolute;
+  left: 169px;
 }
