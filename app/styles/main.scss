@@ -114,15 +114,15 @@ body {
 }
 
 .shapes{
+  position: relative;
+}
+
+.wrapper{
   height: 519px;
   width: 239px;
   position: relative;
   margin: 0 auto;
-  bottom: 519px;
-}
-
-.wrapper{
-  height: 100%;
+  background-image: url('/images/bottom_view.jpg');
 }
 
 #nxt-shape{
