@@ -2,6 +2,9 @@
 
 angular.module('kidsOnRobotsApp')
 .controller('assemblerCtrl', function ($scope, $document) {
+  var TOTAL_ANSWERS = 4;
+
+  var answers = 0;
   var main = null;
   var lightSensor = null;
   var nxt = null;
@@ -15,45 +18,56 @@ angular.module('kidsOnRobotsApp')
   $scope.init = function(){
     main = angular.element($document[0].querySelector('.main'));
     $scope.activateSensors();
+    $scope.activateReceivers();
   };
 
   $scope.activateSensors = function(){
-    lightSensor = main.find('#light-sensor');
-    nxt = main.find('#nxt');
-    wheel1 = main.find('#wheel-1');
-    wheel2 = main.find('#wheel-2');
-
-    sensorReceiver = main.find('#sensor-shape');
-    nxtReceiver= main.find('#nxt-shape');
-    wheel1Receiver = main.find('#wheel-1-shape');
-    wheel2Receiver = main.find('#wheel-2-shape');
+    lightSensor = main.find('#light-sensor').data('type', 'sensor');
+    nxt = main.find('#nxt').data('type', 'module');
+    wheel1 = main.find('#wheel-1').data('type', 'wheel');
+    wheel2 = main.find('#wheel-2').data('type', 'wheel');
 
     var dragOptions = {
       cursor: 'move',
       revert: true
     };
 
-    var dropOptions = {
-      drop: $scope.handleDrop
-    };
-
     lightSensor.draggable(dragOptions);
     nxt.draggable(dragOptions);
     wheel1.draggable(dragOptions);
     wheel2.draggable(dragOptions);
-
-    sensorReceiver.droppable(dropOptions).data('position', 'center');
-    nxtReceiver.droppable(dropOptions).data('position', 'center');
-    wheel1Receiver.droppable(dropOptions).data('position', 'left');
-    wheel2Receiver.droppable(dropOptions).data('position', 'right');
   };
 
+  $scope.activateReceivers = function(){
+    sensorReceiver = main.find('#sensor-shape');
+    nxtReceiver= main.find('#nxt-shape');
+    wheel1Receiver = main.find('#wheel-1-shape');
+    wheel2Receiver = main.find('#wheel-2-shape').data('type', 'wheel');
+
+    var dropOptions = {
+      drop: $scope.handleDrop
+    };
+
+    sensorReceiver.droppable(dropOptions).data('data', { position: 'center', type: 'sensor'});
+    nxtReceiver.droppable(dropOptions).data('data', { position: 'center', type: 'module'});
+    wheel1Receiver.droppable(dropOptions).data('data', { position: 'left', type: 'wheel'});
+    wheel2Receiver.droppable(dropOptions).data('data', { position: 'right', type: 'wheel'});
+  }
+
   $scope.handleDrop = function(event, ui){
-    var position = $(this).data('position');
+    var data = $(this).data('data');
     ui.draggable.draggable( 'disable' );
     $(this).droppable( 'disable' );
-    ui.draggable.position( { of: $(this), my: position+' top', at: position+' top' } );
+    ui.draggable.position( { of: $(this), my: data.position+' top', at: data.position+' top' } );
     ui.draggable.draggable( 'option', 'revert', false );
-  }
+
+    debugger
+    $scope.checkAnswers(data.type, ui.draggable.data('type'))
+  };
+
+  $scope.checkAnswers = function(receiver, object){
+    if(receiver === object){ answers++; }
+    if(answers === TOTAL_ANSWERS){ console.log('change view!') }
+  };
 
 });

@@ -1,17 +1,21 @@
 div(ng-include='\'partials/navbar\'')
-.row
-  .col-md-12.workplace(ng-controller='assemblerCtrl', ng-init='init()')
+.row(ng-controller='assemblerCtrl', ng-init='init()')
+  .col-md-12.workplace
     .col-md-2.sidebar.panel.panel-default
       .panel-heading
         |Tools Panel
       .media
         .tool#light-sensor
+      p.text-center light sensor
       .media
         .tool#nxt
+      p.text-center nxt module
       .media
         .tool#wheel-1
+      p.text-center wheel
       .media
         .tool#wheel-2
+      p.text-center wheel
       .panel-footer
         p drag and drop the needed tools for your car
     .col-md-10
@@ -22,4 +26,5 @@ div(ng-include='\'partials/navbar\'')
             #sensor-shape
             #wheel-1-shape
             #wheel-2-shape
+  .navbar.navbar-default.navbar-inverse.navbar-fixed-bottom
 
