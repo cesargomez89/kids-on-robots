@@ -12,6 +12,10 @@ angular.module('kidsOnRobotsApp', [
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
+      .when('/scenario', {
+        templateUrl: 'partials/scenario',
+        controller: 'ScenarioCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

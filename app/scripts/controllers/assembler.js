@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kidsOnRobotsApp')
-.controller('assemblerCtrl', function ($scope, $document) {
+.controller('assemblerCtrl', function ($scope, $document, $window) {
   var TOTAL_ANSWERS = 4;
 
   var answers = 0;
@@ -61,13 +61,12 @@ angular.module('kidsOnRobotsApp')
     ui.draggable.position( { of: $(this), my: data.position+' top', at: data.position+' top' } );
     ui.draggable.draggable( 'option', 'revert', false );
 
-    debugger
-    $scope.checkAnswers(data.type, ui.draggable.data('type'))
+    if(data.type === ui.draggable.data('type')){ answers++; }
   };
 
   $scope.checkAnswers = function(receiver, object){
-    if(receiver === object){ answers++; }
-    if(answers === TOTAL_ANSWERS){ console.log('change view!') }
+    if(answers === TOTAL_ANSWERS){ $window.location.pathname = '/scenario' }
+    else{ console.log('show modal'); }
   };
 
 });

@@ -1,9 +1,9 @@
 div(ng-include='\'partials/navbar\'')
-.row(ng-controller='assemblerCtrl', ng-init='init()')
+.row(ng-controller='ScenarioCtrl', ng-init='init()')
   .col-md-12.workplace
     .col-md-2.sidebar.panel.panel-default
       .panel-heading
-        |Tools Panel
+        |Blocks Panel
       .media
         .wrap-tool
           .tool#light-sensor
@@ -31,5 +31,4 @@ div(ng-include='\'partials/navbar\'')
             #wheel-1-shape
             #wheel-2-shape
   .navbar.navbar-default.navbar-inverse.navbar-fixed-bottom
-    .container
-      a.btn.btn-default.pull-right(ng-click='goToScenario()') Check answer
+
