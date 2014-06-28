@@ -84,7 +84,13 @@ body {
 .sidebar .tool{
   width: 50px;
   height: 50px;
-  margin: 10px auto;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.sidebar .media{
+  height: 60px;
+  padding-left: 60px;
 }
 
 .sidebar #light-sensor{
@@ -136,16 +142,16 @@ body {
 }
 
 #wheel-1-shape{
-  width: 71px;
-  height: 100px;
-  top: 57px;
+  width: 50px;
+  height: 75px;
+  top: 70px;
   position: absolute;
 }
 
 #wheel-2-shape{
-  width: 70px;
-  height: 100px;
-  top: 57px;
+  width: 50px;
+  height: 75px;
+  top: 70px;
   position: absolute;
-  left: 169px;
+  right: 0px;
 }

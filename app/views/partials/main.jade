@@ -4,14 +4,18 @@ div(ng-include='\'partials/navbar\'')
     .col-md-2.sidebar.panel.panel-default
       .panel-heading
         |Tools Panel
-      .media.tool#light-sensor
-      .media.tool#nxt
-      .media.tool#wheel-1
-      .media.tool#wheel-2
-      .media.panel-footer
+      .media
+        .tool#light-sensor
+      .media
+        .tool#nxt
+      .media
+        .tool#wheel-1
+      .media
+        .tool#wheel-2
+      .panel-footer
         p drag and drop the needed tools for your car
     .col-md-10
-      .jumbotron
+      .panel.panel-default
         .car-bottom.text-center
           <img src='images/bottom_view.jpg'/>
           .shapes
