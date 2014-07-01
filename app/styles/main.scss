@@ -12,6 +12,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 /* Space out content a bit */
 body {
   padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .header,
@@ -91,22 +92,22 @@ body {
 
 .sidebar #light-sensor{
   z-index: 1;
-  background-color: red;
+  background-color: #0CCFC2;
 }
 
 .sidebar #wheel-1{
   z-index: 2;
-  background-color: blue;
+  background-color: #9CE009;
 }
 
 .sidebar #wheel-2{
   z-index: 3;
-  background-color: blue;
+  background-color: #F7921E;
 }
 
 .sidebar #nxt{
   z-index: 4;
-  background-color: orange;
+  background-color: #FF2E43;
 }
 
 .shapes{
@@ -155,4 +156,28 @@ body {
   top: 70px;
   position: absolute;
   right: 0px;
+}
+
+.slot{
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.slot .hovered {
+  background: #aaa;
+}
+
+.slot{
+  border-style: dashed;
+}
+
+.slot{
+  background: #ADB3BA;
 }

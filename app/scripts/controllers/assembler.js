@@ -15,6 +15,8 @@ angular.module('kidsOnRobotsApp')
   var wheel1Receiver = null;
   var wheel2Receiver = null;
 
+  $scope.ok = false;
+
   $scope.init = function(){
     main = angular.element($document[0].querySelector('.main'));
     $scope.activateSensors();
@@ -28,7 +30,10 @@ angular.module('kidsOnRobotsApp')
     wheel2 = main.find('#wheel-2').data('type', 'wheel');
 
     var dragOptions = {
+      containment: '.workplace',
+      stack: '.workspace',
       cursor: 'move',
+      zIndex: 1,
       revert: true
     };
 
@@ -65,8 +70,11 @@ angular.module('kidsOnRobotsApp')
   };
 
   $scope.checkAnswers = function(receiver, object){
-    if(answers === TOTAL_ANSWERS){ $window.location.pathname = '/scenario' }
-    else{ console.log('show modal'); }
+    if(answers === TOTAL_ANSWERS){ $scope.ok = true; }
   };
+
+  $scope.resetGame = function(){
+    $window.location.pathname = '/';
+  }
 
 });

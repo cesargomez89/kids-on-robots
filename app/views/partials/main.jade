@@ -32,4 +32,22 @@ div(ng-include='\'partials/navbar\'')
             #wheel-2-shape
   .navbar.navbar-default.navbar-inverse.navbar-fixed-bottom
     .container
-      a.btn.btn-default.pull-right(ng-click='goToScenario()') Check answer
+      a.btn.btn-default.pull-right(ng-click='checkAnswers()',data-toggle='modal', tabindex="-1", data-target='#answer-modal', aria-hidden="true") Check answer
+  .modal.fade#answer-modal(role="dialog" aria-labelledby="myModalLabel")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h3.modal-title Answer
+        .answer-wrong(ng-hide='ok')
+          .modal-body
+            p
+              |Your robot is not working well. Try again
+          .modal-footer
+            a.btn.btn-default(href='javascript:void(0);', ng-click='resetGame()') Ok
+        .answer-ok(ng-show='ok')
+          .modal-body
+            p
+              |Great! your robot should works, Do you want to continue?
+          .modal-footer
+            a.btn.btn-default(href='/scenario') Yes
+            a.btn.btn-default(href='/') Restart
