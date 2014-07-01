@@ -77,4 +77,8 @@ angular.module('kidsOnRobotsApp')
     $window.location.pathname = '/';
   }
 
+  $scope.nextLevel = function(){
+    $window.location.pathname = '/scenario';
+  }
+
 });

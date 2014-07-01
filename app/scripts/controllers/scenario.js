@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('kidsOnRobotsApp')
-.controller('ScenarioCtrl', function ($scope, $document, $timeout) {
+.controller('ScenarioCtrl', function ($scope, $document, $timeout, $window) {
   var main = null;
-  $scope.slots  = [1, 2, 3];
+  $scope.slots  = [1, 2, 3, 4, 5, 6];
   $scope.blocks = [1, 2, 3, 4];
 
   $scope.init = function(){
@@ -47,5 +47,12 @@ angular.module('kidsOnRobotsApp')
     if(data.type === ui.draggable.data('type')){ answers++; }
   };
 
+  $scope.resetGame = function(){
+    $window.location.pathname = '/';
+  };
+
+  $scope.resetLevel= function(){
+    $window.location.pathname = '/scenario';
+  }
 
 });

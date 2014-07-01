@@ -41,5 +41,5 @@ div(ng-include='\'partials/navbar\'')
             p
               |Great! your robot should works, Do you want to continue?
           .modal-footer
-            a.btn.btn-default(href='/scenario') Yes
-            a.btn.btn-default(href='/') Restart
+            a.btn.btn-default(href='javascript:void(0);', ng-click='nextLevel()') Yes
+            a.btn.btn-default(href='javascript:void(0);', ng-click='resetGame()') Restart
