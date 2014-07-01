@@ -4,30 +4,13 @@ div(ng-include='\'partials/navbar\'')
     .col-md-2.sidebar.panel.panel-default
       .panel-heading
         |Blocks Panel
-      .media
+      .media(ng-repeat='block in blocks')
         .wrap-tool
-          .tool#light-sensor
-      p.text-center light sensor
-      .media
-        .wrap-tool
-          .tool#nxt
-      p.text-center nxt module
-      .media
-        .wrap-tool
-          .tool#wheel-1
-      p.text-center wheel
-      .media
-        .wrap-tool
-          .tool#wheel-2
-      p.text-center wheel
+          .tool(ng-class='"block-"+block')
+          p.text-center {{block}}
       .panel-footer
         p drag and drop the needed tools for your car
     .col-md-10
       .col-md-12
-        .slot#slot1
-        .slot#slot2
-        .slot#slot3
-        .slot#slot4
-        .slot#slot5
-        .slot#slot6
+        .slot(ng-repeat='slot in slots', ng-class='"slot"+slot')
   .navbar.navbar-default.navbar-inverse.navbar-fixed-bottom

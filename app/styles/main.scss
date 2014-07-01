@@ -87,25 +87,25 @@ body {
 }
 
 .sidebar .media{
-  height: 60px;
+  height: 70px;
 }
 
-.sidebar #light-sensor{
+.sidebar #light-sensor, .block-1{
   z-index: 1;
   background-color: #0CCFC2;
 }
 
-.sidebar #wheel-1{
+.sidebar #wheel-1, .block-2{
   z-index: 2;
   background-color: #9CE009;
 }
 
-.sidebar #wheel-2{
+.sidebar #wheel-2, .block-3{
   z-index: 3;
   background-color: #F7921E;
 }
 
-.sidebar #nxt{
+.sidebar #nxt, .block-4{
   z-index: 4;
   background-color: #FF2E43;
 }
