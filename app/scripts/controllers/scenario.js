@@ -4,7 +4,7 @@ angular.module('kidsOnRobotsApp')
 .controller('ScenarioCtrl', function ($scope, $document, $timeout) {
   var main = null;
   $scope.slots  = [1, 2, 3];
-  $scope.blocks = [1, 2, 3, 4, 5, 6];
+  $scope.blocks = [1, 2, 3, 4];
 
   $scope.init = function(){
     main = angular.element($document[0].querySelector('.main'));
@@ -17,7 +17,7 @@ angular.module('kidsOnRobotsApp')
   $scope.activateBlocks = function(){
     var dragOptions = {
       containment: '.workplace',
-      stack: '.workspace',
+      stack: '.workplace',
       cursor: 'move',
       zIndex: 1,
       revert: true

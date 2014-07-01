@@ -79,15 +79,27 @@ body {
 .sidebar{
   padding-left: 0px;
   padding-right: 0px;
+  min-height: 200px;
+  overflow: scroll;
+}
+.sidebar .panel-footer{
+  width: 100%;
 }
 
 .sidebar .tool{
   width: 50px;
   height: 50px;
+  border-radius: 4px;
+  margin: 10px 20px 10px 20px;
+  float: left;
 }
 
-.sidebar .media{
-  height: 70px;
+.sidebar .block{
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  margin: 10px 20px 10px 20px;
+  float: left;
 }
 
 .sidebar #light-sensor, .block-1{

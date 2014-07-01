@@ -4,11 +4,9 @@ div(ng-include='\'partials/navbar\'')
     .col-md-2.sidebar.panel.panel-default
       .panel-heading
         |Blocks Panel
-      .media(ng-repeat='block in blocks')
-        .wrap-tool
-          .tool(ng-class='"block-"+block')
-          p.text-center {{block}}
-      .panel-footer
+      .block(ng-repeat='block in blocks', ng-class='"block-"+block')
+        p.text-center {{block}}
+      .panel-footer.pull-left
         p drag and drop the needed tools for your car
     .col-md-10
       .col-md-12
