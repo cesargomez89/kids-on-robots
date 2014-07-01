@@ -38,5 +38,14 @@ angular.module('kidsOnRobotsApp')
     });
   };
 
+  $scope.handleDrop = function(event, ui){
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'center', at: 'center' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+
+    if(data.type === ui.draggable.data('type')){ answers++; }
+  };
+
 
 });
